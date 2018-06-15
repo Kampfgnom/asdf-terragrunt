@@ -3,9 +3,7 @@ before_script:
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
 script: 
-  - asdf plugin-add terragrunt ./
-  - asdf list-all terragrunt
-  - asdf plugin-test terragrunt ./ 'terragrunt --version'
+  - asdf plugin-test terragrunt https://gitlab.com/td7x/asdf/terragrunt.git
 os:
   - linux
   - osx
