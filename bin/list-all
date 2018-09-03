@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -e
+set -o pipefail
 
 releases_path=https://api.github.com/repos/gruntwork-io/terragrunt/releases
 cmd="curl -s"
 if [ -n "$GITHUB_API_TOKEN" ]; then
   cmd="$cmd -H 'Authorization: token $GITHUB_API_TOKEN'"
 fi
-cmd="$cmd -H 'Authorization: token $GITHUB_API_TOKEN'"
 cmd="$cmd $releases_path"
 
 function sort_versions() {
